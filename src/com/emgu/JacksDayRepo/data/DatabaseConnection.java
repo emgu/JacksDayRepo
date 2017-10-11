@@ -38,11 +38,15 @@ public class DatabaseConnection {
 	public List<Activity> getAll() {
         String sqlSelect = "SELECT * FROM activity";
         return jdbcTemplate.query(sqlSelect, new ActivityRowMapper());
-
 	}
 	
-	public List<Activity> getActivitySince(long time){
+	public List<Activity> getSince(long time){
         String sqlSelect = "SELECT * FROM activity where time <= " + time;
+        return jdbcTemplate.query(sqlSelect, new ActivityRowMapper());
+	}
+
+	public List<Activity> getLast(int number){
+        String sqlSelect = "SELECT * FROM activity ORDER BY time DESC LIMIT " + number;
         return jdbcTemplate.query(sqlSelect, new ActivityRowMapper());
 	}
 

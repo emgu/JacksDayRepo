@@ -16,4 +16,12 @@ public class ActivityDao {
 	public List<Activity> getAllActivities() {
 		return connection.getAll();
 	}
+	
+	public List<Activity> getSince(long time){
+		return connection.getSince(time);
+	}
+	
+	public List<Activity> getLast(int number){
+		return connection.getLast(number);
+	}
 }
