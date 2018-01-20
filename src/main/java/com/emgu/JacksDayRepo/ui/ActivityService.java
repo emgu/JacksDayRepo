@@ -1,6 +1,5 @@
 package com.emgu.JacksDayRepo.ui;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
