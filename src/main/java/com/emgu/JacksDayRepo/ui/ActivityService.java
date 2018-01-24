@@ -9,12 +9,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.emgu.JacksDayRepo.model.Activity;
-@Path("/ActivityService") 
 
+@Path("/ActivityService")
 public class ActivityService {
-	   ActivityDao activityDao = new ActivityDao();  
+	   ActivityDao activityDao = new ActivityDao();
+
 	   @GET 
-	   @Path("/activities") 
+	   @Path("/activities")
 	   @Produces(MediaType.APPLICATION_XML) 
 	   public List<Activity> getActivities(){ 
 	      return activityDao.getAllActivities();
@@ -28,4 +29,4 @@ public class ActivityService {
 	   }
 }
 
-// /JacksDayRepository/repository/ActivityService/activities
+// /JacksDayRepo/rest/ActivityService/activities
